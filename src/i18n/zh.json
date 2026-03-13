@@ -1,0 +1,23 @@
+{
+  "toolbar": {
+    "format": "格式化",
+    "diff": "比对"
+  },
+  "editor": {
+    "clear": "清空",
+    "leftTitle": "JSON A",
+    "rightTitle": "JSON B"
+  },
+  "result": {
+    "title": "比对结果",
+    "changes": "{{count}} 处更改",
+    "empty": "粘贴两份 JSON 后自动对比",
+    "identical": "两份 JSON 完全一致 ✅",
+    "error": "JSON 格式有误，请检查输入 ⚠️",
+    "missingSide": "请在左右两侧都粘贴 JSON 后再进行比对",
+    "added": "已添加",
+    "removed": "已删除",
+    "modified": "已修改"
+  }
+}
+

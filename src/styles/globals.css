@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #050816;
+  --foreground: #f9fafb;
+  --border: rgba(148, 163, 184, 0.35);
+  --muted: rgba(148, 163, 184, 0.08);
+  --muted-foreground: #9ca3af;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --editor-background: #0b1020;
+  --panel-background: #0b1020;
+  --panel-elevated: #111827;
+
+  --chip-added-bg: rgba(22, 163, 74, 0.14);
+  --chip-added-border: rgba(22, 163, 74, 0.6);
+  --chip-removed-bg: rgba(239, 68, 68, 0.14);
+  --chip-removed-border: rgba(239, 68, 68, 0.6);
+  --chip-modified-bg: rgba(234, 179, 8, 0.12);
+  --chip-modified-border: rgba(234, 179, 8, 0.6);
+
+  --diff-added-bg: rgba(34, 197, 94, 0.16);
+  --diff-added-char: rgba(34, 197, 94, 0.5);
+  --diff-removed-bg: rgba(248, 113, 113, 0.18);
+  --diff-removed-char: rgba(248, 113, 113, 0.5);
+  --diff-modified-bg: rgba(250, 204, 21, 0.16);
+}
+
+[data-theme='light'] {
+  --background: #f3f4f6;
+  --foreground: #020617;
+  --border: rgba(148, 163, 184, 0.4);
+  --muted: rgba(148, 163, 184, 0.12);
+  --muted-foreground: #6b7280;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --editor-background: #f9fafb;
+  --panel-background: #ffffff;
+  --panel-elevated: #ffffff;
+
+  --chip-added-bg: rgba(22, 163, 74, 0.08);
+  --chip-added-border: rgba(22, 163, 74, 0.45);
+  --chip-removed-bg: rgba(239, 68, 68, 0.08);
+  --chip-removed-border: rgba(239, 68, 68, 0.45);
+  --chip-modified-bg: rgba(234, 179, 8, 0.08);
+  --chip-modified-border: rgba(234, 179, 8, 0.45);
+
+  --diff-added-bg: rgba(34, 197, 94, 0.12);
+  --diff-added-char: rgba(34, 197, 94, 0.4);
+  --diff-removed-bg: rgba(248, 113, 113, 0.14);
+  --diff-removed-char: rgba(248, 113, 113, 0.45);
+  --diff-modified-bg: rgba(250, 204, 21, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at top, #1e293b 0, transparent 55%),
+    radial-gradient(circle at bottom, #020617 0, #020617 55%),
+    var(--background);
+  color: var(--foreground);
+}
+
+@layer components {
+  .app-shell {
+    @apply min-h-screen flex items-center justify-center px-4 py-6;
+  }
+
+  .app-card {
+    @apply relative w-full max-w-6xl rounded-3xl border border-border bg-[color:var(--panel-background)] shadow-[0_24px_80px_rgba(15,23,42,0.85)] overflow-hidden flex flex-col;
+  }
+
+  .app-card-gradient {
+    position: absolute;
+    inset: -1px;
+    background:
+      radial-gradient(circle at top left, rgba(94, 234, 212, 0.18), transparent 55%),
+      radial-gradient(circle at top right, rgba(129, 140, 248, 0.3), transparent 60%);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .app-card-inner {
+    @apply relative flex flex-col backdrop-blur-sm;
+  }
+
+  .pill-button {
+    @apply inline-flex items-center justify-center rounded-full px-3 py-1 text-xs font-medium border border-border bg-transparent text-muted-foreground transition-colors;
+  }
+
+  .pill-button-primary {
+    @apply pill-button bg-[color:var(--primary)] text-[color:var(--primary-foreground)] border-transparent hover:bg-indigo-500;
+  }
+
+  .pill-button-ghost {
+    @apply pill-button hover:bg-[color:var(--muted)];
+  }
+
+  .monaco-editor .editor-line-added {
+    background-color: var(--diff-added-bg);
+  }
+
+  .monaco-editor .editor-line-removed {
+    background-color: var(--diff-removed-bg);
+  }
+
+  .monaco-editor .editor-line-modified {
+    background-color: var(--diff-modified-bg);
+  }
+
+  .monaco-editor .editor-inline-added {
+    background-color: var(--diff-added-char);
+    color: #bbf7d0;
+  }
+
+  .monaco-editor .editor-inline-removed {
+    background-color: var(--diff-removed-char);
+    color: #fecaca;
+  }
+
+  .monaco-editor .editor-inline-modified {
+    background-color: var(--diff-modified-bg);
+    color: #facc15;
+  }
+}
+

@@ -1,0 +1,13 @@
+[package]
+name = "json-diff"
+version = "1.0.0"
+description = "JSON Diff desktop app built with Tauri"
+authors = ["Your Name <you@example.com>"]
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2", features = ["wry"] }
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+

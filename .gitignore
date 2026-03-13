@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.vite
+.turbo
+.DS_Store
+Thumbs.db
+src-tauri/target
+src-tauri/.cargo-lock
+*.log
+

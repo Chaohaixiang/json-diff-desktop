@@ -1,0 +1,23 @@
+{
+  "toolbar": {
+    "format": "Format",
+    "diff": "Diff"
+  },
+  "editor": {
+    "clear": "Clear",
+    "leftTitle": "JSON A",
+    "rightTitle": "JSON B"
+  },
+  "result": {
+    "title": "Diff Result",
+    "changes": "{{count}} changes",
+    "empty": "Paste JSON to start comparing",
+    "identical": "JSONs are identical ✅",
+    "error": "Invalid JSON format ⚠️",
+    "missingSide": "Please provide JSON on both sides before comparing",
+    "added": "Added",
+    "removed": "Removed",
+    "modified": "Modified"
+  }
+}
+
